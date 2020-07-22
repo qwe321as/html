@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.spotlight{
+		background-color: yellow;
+	}
+	.redtext{
+		color : red;
+	}
+	.largetext{
+		font-size: 30pt;
+	}
+	.italictext{
+		font-style: italic; /*글자기울임*/
+	}
+	.under{
+		text-decoration: underline; /*글자 밑줄*/
+	}
+</style>
+<script src="../js/jquery.js"  type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$('p').addClass('redtext').addClass('under');
+		$('p').addClass('redtext under');
+		
+		$('#rclass').click(function () {
+			//alert(1);
+			$('p:even').removeClass('redtext under');
+		});
+		$('#cclass').click(function () {
+			$('p:odd').removeClass('redtext under').addClass('spotlight');
+		});
+		$('#div1').click(function () {
+			$(this).remove();
+		});
+	});
+	//new 클래스이름
+</script>
+</head>
+<body>
+	<button id="rclass">removeClass</button>
+	<button id="cclass">changeClass</button>
+	<div id="div1">
+	<p>엘리먼트롤</p>
+	<p>추가하고</p>
+	<p>제거하는</p>
+	<p>연습하기</p>
+	</div>
+</body>
+</html>

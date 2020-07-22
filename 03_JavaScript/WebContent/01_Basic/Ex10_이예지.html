@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	var kor = prompt("국어 입력", "");
+	var eng = prompt("영어 입력", "");
+	var math = prompt("수학 입력", "");
+	var sum = Number(kor) + Number(eng) + Number(math);
+	var avg = Number(sum / 3);
+
+	document.write("국어점수 :", kor, " 영어점수 :", eng, " 수학점수:", math);
+	document.write("<br>");
+	document.write("합계: ", sum, " 평균: ", avg);
+	document.write("<br>");
+	if (parseInt(avg) == 100) {
+		document.write("학점은 A+");
+	} else if (parseInt(avg) >= 90) {
+		document.write("학점은 A");
+	} else if (parseInt(avg) >=80) {
+		document.write("학점은 B");
+	} else if (parseInt(avg) >=70) {
+		document.write("학점은 C");
+	} else {
+		document.write("낙제");
+	}
+	document.write("<br>");	
+	document.write("<br>");
+
+	switch (parseInt(parseInt(avg)/10)) {
+	case 10:
+		document.write("학점은 A+");
+		break;
+	case 9:
+		document.write("학점은 A");
+		break;
+	case 8:
+		document.write("학점은 B");
+		break;
+	case 7:
+		document.write("학점은 C");
+		break;
+	default:
+		document.write("낙제");
+		break;
+	}
+</script>
+
+<body>
+
+</body>
+</html>

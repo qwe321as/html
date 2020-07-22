@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div *{
+display : block; /* span은 블록 요소가 아니고 인라인이라서 바꿔쥼*/
+border:2px solid gray;
+padding: 5px;
+margin: 15px;
+text-align: center;} 
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	//$('div').children("p.first").css({'color':'blue' , 'border':'2px solid red'});
+	//children 자식에 접근할떄 사용  span은 자식이 아나라 자손이라 적용안됌
+	/* $('div').find("span").css({'color':'blue' , 'border':'2px solid red'}); */
+	//find은 자손과 자식에 모두접근가능 
+	$('span').parents().css({'color':'blue' , 'border':'2px solid red'});
+	// parent = 한칸위 부모 <-span입장에서 부모면  p  ,  모든 부모를 할떄는 parents
+});
+</script>
+</head>
+<body>
+<div style="width:500px">
+<p class="first">p(child)
+<span>span(grandchild)</span></p>
+<p class="second">p(child)
+<span>span(grandchild)</span></p>
+</div>
+</body>
+</html>

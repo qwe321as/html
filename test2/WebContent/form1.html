@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function inputCheck() {
+		str = '입력하신 값은 : \n';
+		if (document.myform.title.value.length == 0) {
+			alert('제목을 입력하세요');
+			return false;
+		}
+		if (myform.author.value.length == 0) {
+			alert('작가을 입력하세요');
+			return false;
+		}
+		if (myform.publisher.value.length == 0) {
+			alert('출판사를 입력하세요');
+			return false;
+		}
+		if (myform.price.value.length == 0) {
+			alert('가격을 입력하세요');
+			return false;
+		}
+		if (isNaN(myform.price.value)) {
+			alert('가격을 숫자로 입력하세요');
+			return false;
+		}
+		if (myform.date.value.length == 0) {
+			alert('입고일을 입력하세요');
+			return false;
+		}
+		str += myform.title.value+"\n";
+		str += myform.author.value+"\n";
+		str += myform.publisher.value+"\n";
+		str += myform.price.value+"\n";
+		str += myform.date.value+"\n";
+		
+		flag = true;
+		len = myform.kind.length;
+		for (var i = 0; i < len; i++) {
+			if (myform.kind[i].checked==true) {
+				str+= myform.kind[i].value +" ";
+				flag = false;
+			}
+		}
+		str += "\n";
+		if (flag == true) {
+			alert('배송비선택하세용');
+			return false;
+					}
+		flag = true;	
+		len = myform.bookstore.length;
+		for (var i = 0; i < len; i++) {
+			if (myform.bookstore[i].checked == true) {
+				str+= myform.bookstore[i].value+" ";
+				flag=false;
+			}
+		}
+		str += "\n";
+		if (flag==true) {
+			alert("서점선택하세용");
+			return false;
+		}
+
+		if (myform.count.value=="선택") {
+			alert("수량선택하세용");
+			return false;
+		}
+		str += myform.count.value;
+		alert(str);
+	}
+</script>
+</head>
+<body>
+	<h1>도서 정보 입력</h1>
+	<form name="myform" action="Result.jsp" method="post">
+		<table border=1>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td>저자</td>
+				<td><input type="text" name="author">
+			</tr>
+			<tr>
+				<td>출판사</td>
+				<td><input type="text" name="publisher">
+			</tr>
+			<tr>
+				<td>가격</td>
+				<td><input type="text" name="price">
+			</tr>
+			<tr>
+				<td>입고일</td>
+				<td><input type="date" name="date">
+			</tr>
+
+			<tr>
+				<td>배송비</td>
+				<td>유료 <input type="radio" name="kind" value="유료"> 무료 <input
+					type="radio" name="kind" value="무료">
+			</tr>
+			<tr>
+				<td>구입가능 서점</td>
+				<td>교보문고 <input type="checkbox" name="bookstore" value="kyobo">
+					알라딘 <input type="checkbox" name="bookstore" value="aladin">
+					yes24 <input type="checkbox" name="bookstore" value="yes24">
+					인터파크 <input type="checkbox" name="bookstore" value="interpark">
+			</tr>
+			<tr>
+				<td>보유수량</td>
+				<td><select name="count" id="count">
+						<option value="선택">선택
+						<option value="1">1
+						<option value="2">2
+						<option value="3">3
+						<option value="4">4
+						<option value="5">5
+				</select></td>
+			</tr>
+
+		</table>
+		<br> <input type="submit" value="전송"
+			onclick="return inputCheck()"> <input type="reset" value="취소">
+	</form>
+</body>
+</html>
+
+<!-- 
+제목 누락 체크
+저자 누락 체크
+출판사 누락 체크
+가격 누락 체크
+가격은 숫자만 입력 가능
+입고일 누락 체크
+배송비  누락 체크
+서점  누락 체크 : 1개는반드시 선택, 실제로2개이상 선택
+보유수량 누락 체크
+입력한 모든것 alert에 출력하고 jsp로 넘어가기
+
+ -->
+

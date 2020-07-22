@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>선택자간의 우선 순위 알아보기</title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+		#bgPage1 {
+		color:red;
+		}
+		.bgPage2{
+		color : blue;}
+		.blueText{ 
+		color:purple;}
+		span{
+		background-color: silver;
+		color:black !important;}
+		</style>
+	</head>
+
+	<body id="bgPage1" class="bgPage2">
+		<h1>선택자간의 우선 순위 알아보기</h1>
+		<hr />
+		<div>
+			<h2>굴 이야기</h2> 
+			<p class="bgPage2">
+				일명 <span class="blueText">석화</span>라고도 하는데 멀리서 보면 따낸 굴조개 껍질이 바위면에 하얗게 붙어있어서 마치 <span class="blueText">꽃무더기</span>를 연상하게 한다. 굴은 <span class="blueText">3대 영양소</span>는 물론 비타민, 미네랄에 이르기까지 풍부한 영양분을 함유하고 있어서 완전식품인 우유와 별로 다를 바가 없다.
+			</p>
+		</div>
+	</body>
+</html>
+
+
+<!-- 
+선택자
+우선순위 !important>인라인 스타일태그(직접그자리에 입력한거)>id>class,속성 가상>태그선택자>전체선택자 
+태그선택자:h1 p
+자식선택자:>
+자손선택자:공백
+아이디 선택자 : #
+클래스 선택자 : .
+속성선택자 : a[title]
+전체선택자 : *
+형제선택자 : +
+가상선택자 :  :hover, :focus, :first-child, :nth-child(3)
+그룹선택자 : ,
+ -->

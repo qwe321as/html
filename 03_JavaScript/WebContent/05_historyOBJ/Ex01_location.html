@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var now = new Date();
+document.write("현재시간은 "+ now.toLocaleString() + "입니다."+"<br>");
+document.write("네이트".link("http://www.nate.com"));
+function goNaver() {
+	window.location.href="http://www.naver.com";
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="네이버" onclick="goNaver()" />
+<input type="button" value="다음" onclick="location.href = 'http://www.daum.net'" />
+<br>
+<input type="button" value="지금 시간은?" onClick="location.reload()">
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str = "태양처럼 뜨거운, 바람처럼 자유로운 영혼";
+	document.write(str + "<br>");
+	document.write(str.toString() + "<br>");
+	document.write(str.charAt(5) + "<br>");//0부터시작
+	document.write(str.indexOf('처럼') + "<br>");//대소문자 정확하게.
+	document.write(str.indexOf('처럼', 5) + "<br>");//5번쨰 이후의 처럼의 위치
+	document.write(str.indexOf('가나다') + "<br>");
+	document.write(str.substring(10, 14) + "<br>");//이건 스트링 대문자 쓰면 안나와,10,11,12,13까지 출력
+	document.write(str.substring(10) + "<br>");
+	document.write(str.slice(10, 14) + "<br>");
+	document.write(str.slice(10) + "<br>");
+	document.write(str.slice(10, -4) + "<br>");// -4 = 맨뒤에서부터 4개 안출력함
+	document.write(str.substr(10, 3) + "<br>");//10번째부터 3개
+	document.write(str.replace('럼', '가')+"<br>"); // 처음만난 럼만 바뀌고 두번쨰 만나면 안바뀜
+	word = "I Can Do IT!";
+	document.write(word.toUpperCase()+"<br>");
+	document.write(word.toLowerCase()+"<br>");
+	document.write(word.length+"<br>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

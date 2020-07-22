@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>해상도 크기에 따라 디자인 다르게 설정하기 </title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body{
+			background: url(../images/pattern_yellow.png);
+			}
+			h1 span{
+			display : none;
+			}
+			.btn{
+			background-color: pink;
+			color: white;
+			border: none;
+			}
+			div{
+			text-align: right;
+			}
+			/* Media Query */
+			@media only screen and (min-width : 320px) and (max-width:799px){
+			h1{
+				background: url(../images/bag1.png) no-repeat center top;
+				height: 295px;
+			}
+			.btn{
+			font-sizw : 1.1em;
+			padding: 5px 10px;
+			border-radius: 5px;
+			}
+			}
+			@media only screen and (min-width:800px) and (max-width:1024px){
+			h1{
+				background: url(../images/bag2.png) no-repeat center top;
+				height: 530px;
+			}
+			.btn{
+			font-sizw : 2.1em;
+			padding: 10px 40px;
+			border-radius: 15px;
+			}
+			}
+			@media only screen and (min-width : 1025px){
+			h1{
+				background: url(../images/bag3.png) no-repeat center top;
+				height: 650px;
+			}
+			.btn{
+			font-sizw : 3.1em;
+			padding: 25px 60px;
+			border-radius: 30px;
+			}
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<h1><span>What is Responsive Web Design?</span></h1>
+		<div>
+			<input type="button" value="Learn More" class="btn" />
+		</div>
+	</body>
+</html>

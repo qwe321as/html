@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 300px;
+	height: 200px;
+}
+</style>
+<script type="text/javascript">
+	function receiver() {
+		//alert(1);
+
+		myform.child_id.value = opener.myform.id.value;
+
+		window.document.myform.child_pw.value = window.opener.document.myform.pw.value;
+
+		//opener 객체 : 현재 창을 열리게 한 부모창을 지칭하는 객체
+
+	}
+	function myClose() {
+		 opener.myform.id.value =myform.child_id.value;
+		 window.opener.document.myform.pw.value = document.myform.child_pw.value;
+		 self.close();
+	}
+</script>
+</head>
+<body onload="receiver()">
+	<img src="../images/pop1.jpg" />
+	<br>
+	<form name="myform">
+		id : <input type="text" name="child_id" /> <br> pw : <input
+			type="text" name="child_pw" /> <br> <input type="button"
+			value="닫기" onclick="myClose()" />
+
+	</form>
+</body>
+</html>

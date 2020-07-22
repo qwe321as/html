@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.spotlight{
+		background-color: yellow;
+	}
+	.redtext{
+		color : red;
+	}
+	.largetext{
+		font-size: 30pt;
+	}
+	.italictext{
+		font-style: italic; /*글자기울임*/
+	}
+	.under{
+		text-decoration: underline; /*글자 밑줄*/
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	alert(1);
+	$('span').addClass('spotlight');
+	$('span[id]').addClass('redtext'); //id를 갖고있는
+	$('span[id="simple1"]').addClass('largetext');
+	$('span[id!="simple1"]').addClass('italictext');
+	$('span[id*="ple1"]').addClass('under'); 
+	//*포함하고있는 ^시작하는 $끝나는
+});
+</script>
+</head>
+<body>
+	<span id="simple1">simple</span>
+	<span class="simple1">jQuery</span>
+	<span id="simple2">basic</span>
+	<span class="simple1">example</span>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p,div{
+margin: 5px;
+padding: 5px;
+text-align: center;
+}
+.border{
+border: 3px solid gray;
+}
+.background{
+background-color: lightblue;
+}
+div {
+	background: lightgreen;
+}
+p{
+background: lightyellow;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	//$('div').find('p').find('span').addClass('background').end().end().addClass("border");
+	//end 지금의 작업대상 하나위로 이동
+	$('div').find('p').find('span').addClass('background').andSelf().addClass("border");
+	//and self 자기자신 포함
+});
+</script>
+</head>
+<body>
+	<div>
+		<p>
+			첫째 문장 <span>안의 span</span>
+		</p>
+		<p>둘째 문장</p>
+	</div>
+</body>
+</html>

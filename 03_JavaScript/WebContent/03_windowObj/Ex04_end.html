@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex04_end.html</title>
+<script type="text/javascript">
+	function meClose(){
+		
+		var su11 = Number(document.myform.su1.value);
+		var su22 = Number(document.myform.su2.value);
+		
+		//alert(su11 + su22);
+		
+		var oper = Number(document.myform.operator.value);
+		switch(oper){
+			case 1: result = su11 + su22; break;
+			case 2:	result = su11 - su22; break;
+			case 3:	result = su11 * su22; break;
+			case 4:	result = su11 / su22; break;
+		}
+		opener.myform.result.value = result;
+		self.close();
+		
+	}
+</script>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name="su1"/>
+		
+		<select name="operator">
+			<option value="1">더하기</option>
+			<option value="2">빼기</option>
+			<option value="3">곱하기</option>
+			<option value="4">나누기</option>
+		</select>
+		
+		<input type="text" name="su2"/>
+		<br><br>
+		<input type="button" value="닫기" onClick="meClose()"/>
+	</form>
+</body>
+</html>
+
+

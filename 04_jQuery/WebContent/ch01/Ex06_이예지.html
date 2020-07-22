@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		sum = 0;
+		$('td:nth-child(2)').each(function() {
+			sum += eval($(this).text());
+			//alert($(this).text());
+			if ($(this).text()>=80) {
+			
+				$(this).prev().css('backgroundColor','cyan')
+				$(this).css('backgroundColor','cyan')
+				$(this).next().css('backgroundColor','cyan')
+			} else if ($(this).text()<=30) {
+				$(this).siblings().css('backgroundColor','red')
+				$(this).css('backgroundColor','red')				
+			}else {
+				//$(this).css('backgroundColor','yellow')
+				$(this).parent().css('backgroundColor','yellow')
+			}
+		});
+$('.result').append("총합은: "+sum);
+	});
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th width=100>이름</th>
+			<th width=100>점수</th>
+			<th width=100>성별</th>
+		</tr>
+		<tr>
+			<td>조권</td>
+			<td>20</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>김우빈</td>
+			<td>100</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>신민아</td>
+			<td>78</td>
+			<td>여</td>
+		</tr>
+		<tr>
+			<td>이예지</td>
+			<td>98</td>
+			<td>여</td>
+		</tr>
+		<tr>
+			<td>이동해</td>
+			<td>23</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>박서준</td>
+			<td>40</td>
+			<td>남</td>
+		</tr>
+		<tr>
+			<td>한효주</td>
+			<td>66</td>
+			<td>여</td>
+		</tr>
+	</table>
+	<div class="result">
+	
+	</div>
+</body>
+</html>

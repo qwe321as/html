@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+var arr = [
+	["../images/pic1.jpg", "../images/pic2.jpg"],
+	["../images/pic3.jpg", "../images/pic4.jpg"],
+	["../images/pic5.jpg", "../images/pic6.jpg"]		
+];	
+	var str ="<table border=1>";
+	
+	for (var i = 0; i < arr.length; i++) {
+	str +="<tr>";
+		for (var j = 0; j < arr[i].length; j++) {
+			str += "<td><img src=" + arr[i][j] +" width=150px height=150px></td>";
+		}
+		str+="</tr>"
+	}
+	str+="</table>"
+	document.write(str);
+</script>
+</head>
+<body>
+
+</body>
+</html>

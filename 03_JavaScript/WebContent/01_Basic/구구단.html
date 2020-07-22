@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex12_내이름.html</title>
+<style type="text/css">
+	body{
+		text-align: center;
+		padding : 10px;
+	}
+	table{
+		margin:auto;
+		width : 800px;
+		border-collapse:collapse;
+	}
+	tr:nth-child(1){
+		background: pink;
+	}
+</style>
+<script type="text/javascript">
+	document.write("<table border=1>");
+	
+	document.write("<tr>");
+	for(var i=2;i<=9;i++){
+		document.write("<td>"+i+"단</td>");
+	}	
+	document.write("</tr>");
+	
+	for(var su=1; su<=9 ; su++){
+		document.write("<tr>");
+		for(var dan=2; dan<=9; dan++){
+			document.write("<td>"+dan +"X"+su +"="+ dan*su + "</td>");
+		}
+		document.write("</tr>");
+	}
+	
+	document.write("</table>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+text-align : center;
+margin : 10px;
+}
+hr{
+width:500px;
+color:green;
+size:1px;
+}
+input {
+	margin: 10px;
+}
+</style>
+<script type="text/javascript">
+var history_len="히스토리 갯수 :";
+history_len += history.length;
+document.write(history_len);
+</script>
+</head>
+<body>
+<h2>네번째 페이지입니다.</h2>
+<a href="first.html"><img src="../images/01_s.gif"></a>
+<a href="second.html"><img src="../images/02_s.gif"></a>
+<a href="third.html"><img src="../images/03_s.gif"></a>
+<img src="../images/04.gif">
+<hr>
+<form>
+<a href="#" onClick="javascript:history.go(-3)">
+<input type="button" value="3 페이지 이전"></a>
+<a href="#" onClick="javascript:history.back()">
+<input type="button" value="이전 페이지로"></a>
+<a href="#" onClick="javascript:history.forward()">
+<input type="button" value="앞 페이지로"></a>
+</form>
+</body>
+</html>

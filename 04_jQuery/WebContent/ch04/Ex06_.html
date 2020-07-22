@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+form {
+	margin-top: 40px;
+}
+
+#dan {
+	width: 50px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('.area').attr(function () {
+	for (var i = 1; i < 10; i++) {
+		'<option value ="i">i단</option>'
+	}
+		
+	});
+});
+
+</script>
+</head>
+<body>
+	<form>
+		<div class="area">
+			<!-- <select id="dan">
+		<option value ="1">1단</option>
+		<option value ="9">9단</option> //for문으로 만들기
+		</select> -->
+
+		</div>
+		<br> <input type="button" id="view" value="구구단 출력">
+	</form>
+	<br>
+	<div id="result"></div>
+</body>
+</html>

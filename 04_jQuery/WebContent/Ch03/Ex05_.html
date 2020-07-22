@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p {
+	background-color: lightgreen;
+	text-align: center;
+}
+
+div {
+	background-color: lightyellow;
+}
+
+.divBorder {
+	border: 2px solid red;
+	margin: 10px;
+	padding: 10px;
+	width: 60px;
+}
+
+.pBorder {
+	border: 2px solid yellow;
+	width: 80px;
+	height: 50px;
+	margin: 5px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('button').click(function () {
+		$('p').wrapAll('<div class = "divBorder"></div>')	
+		$('p').wrap('<div class = "pBorder"></div>');
+	});
+});
+</script>
+</head>
+<body>
+	<p>jQuery</p>
+	<div>
+		<p>Oracle</p>
+	</div>
+	<p>Html</p>
+	<p>JavaScript</p>
+	<h3>h3태그</h3>
+	<button> 버튼 </button>
+</body>
+</html>

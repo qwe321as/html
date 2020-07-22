@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05_setInterval.html</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var arrimage = [ 'pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg' ];
+		var cnt = 0;
+		/* 
+		function abc() {
+			var area = document.getElementById("myimg");
+			if (cnt == 4) {
+				cnt=0;
+			}
+			var result = "<img src = '../images/"+arrimage[cnt++]+"'></img>'";
+			area.innerHTML = result;
+		}
+		setInterval(abc, 500); //500=0.5초 */
+		 var imageshow = setInterval(function(){
+			 var area = document.getElementById("myimg");
+				if(cnt == 4){
+					cnt = 0;
+				}
+				var result = "<img src='../images/" + arrimage[cnt++] + "'></img>" ;
+				area.innerHTML = result;			 
+		 }, 500);
+		//setTimeout(기능, 시간 ); 시간이지나면 기능이 1번 실행된다.
+		setTimeout(function () {
+			clearInterval(imageshow);
+			var area = document.getElementById("myimg");
+			area.innerHTML = "중지합니다."; 
+		},10000);
+	}
+</script>
+</head>
+<body>
+	<div id="myimg"></div>
+</body>
+</html>

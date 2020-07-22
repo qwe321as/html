@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showPopup(pop) {
+		window.open(pop,'POPPOP','width=300 height=300');
+	}
+	function showCenter(pop) {
+		var winw =600;
+		var winh=400;
+		//document.write(screen.width+", "+screen.height); //1920, 1080
+		var winLeft = (screen.width - winw)/2;
+		var winTop = (screen.height - winh)/2;
+		var options = "width= "+winw+", height= "+winh+" left="+winLeft+" top="+winTop;
+		window.open(pop,'nweWin',options);
+ 	}
+	function openWindow() {
+		mywin = window.open('Ex02_popup3.html','pop','width=300 height=300');
+
+	}
+	function closeWindow() {
+		mywin.close();
+
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="이벤트" onclick="showPopup('Ex02_popup1.html')" />
+	<br>
+	<br>
+	<input type="button" value="화면 중앙에 띄우기" onclick="showCenter('Ex02_popup2.html')" />
+	<br>
+	<br>
+	<input type="button" value="창열기" onclick="openWindow()" />
+	<br>
+	<br>
+	<input type="button" value="창닫기" onclick="closeWindow()" />
+	<br>
+	<br>
+</body>
+</html>

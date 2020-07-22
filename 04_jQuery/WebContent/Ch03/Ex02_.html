@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('header').after('<div> 좋아하는 과일 : 사과 </div>');
+		$('header').after('<div> 좋아하는 과일 : 수박 </div>');
+		$('<div> 싫어하는 과일 : 키위 </div>').insertAfter('header');
+		$('<div> 싫어하는 과일 : 바나나 </div>').insertAfter('header');
+ 
+		$('footer').before('<div> 좋아하는 과일 : 사과 </div>');
+		$('footer').before('<div> 좋아하는 과일 : 수박 </div>');
+		$('<div> 싫어하는 과일 : 키위 </div>').insertBefore('footer');
+		$('<div> 싫어하는 과일 : 바나나 </div>').insertBefore('footer');
+ 
+	});
+	//target.after(새로운 엘리먼트); = 새로운 엘리먼트.insertAfter; 바로뒤의 형제로 들어간다.
+	//target.before(새로운 엘리먼트); = 새로운 엘리먼트.insertBefore; 바로앞의 형제로 들어간다.
+</script>
+</head>
+<body>
+	<header>
+		<h1>과일</h1>
+	</header>
+	<hr>
+	<footer>
+		<h3>
+			<i>jQuery</i>
+		</h3>
+	</footer>
+</body>
+</html>

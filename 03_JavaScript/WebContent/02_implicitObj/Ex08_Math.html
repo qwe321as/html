@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var maxNum = Math.max(30, 70, 150, 33);
+	document.write("최댓값: " + maxNum + "<br>");
+	var minNum = Math.min(30, 70, 150, 33);
+	document.write("최솟값: " + minNum + "<br>");
+	var roundNum = Math.round(3.758);
+	document.write("반올림: " + roundNum + "<br>");
+	var ceilNum = Math.ceil(3.258);
+	document.write("올림: " + ceilNum + "<br>");
+	var floorNum = Math.floor(3.658);
+	document.write("내림: " + floorNum + "<br>");
+	var piNum = parseInt(3.658);
+	document.write("내림: " + piNum + "<br>");
+	
+	document.write(12.356486.toFixed(2) + "<br>"); //2번째 자리에서 반올림하세요.
+	
+	var ranNum = Math.random();
+	document.write("난수 :"+ranNum+"<br>"); //0<=x<1
+	var ranNum1 = Math.floor(Math.random()*3+4);
+	document.write("난수 :"+ranNum1+"<br>"); //4,5,6(4~6) 
+	
+	var cnt=0;
+	var su = Math.floor(Math.random()*45+1); //뒤에수 - 앞에수 +1
+	do {
+	     dap = prompt("1-45 숫자입력", " ");
+			cnt++;
+		if (su>dap) {
+			alert('더 큰 수 입력하세요');
+		}
+		else if (su<dap) {
+			alert('더 작은 수 입력하세요');
+		}
+		else{
+			alert('정답');
+			break;
+		}
+		
+	} while (true);
+	document.write("난수 :"+su+"<br>");
+	 document.write("시도한 횟수 : " + cnt +"번");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

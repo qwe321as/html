@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url("../images/bg11.gif");
+}
+</style>
+<script type="text/javascript">
+	function bg(my) {
+		//alert('bg');
+		var reply =confirm("배경 이미지를 바꾸겠습니까?");
+		document.write(reply);
+		if (reply) {
+			document.body.style.backgroundImage = "url(" + my +")";
+		}
+	}
+</script>
+</head>
+<body onload="alert('저의 홈피에 오신것을 환영합니다.')">
+	<form>
+	 	<input type="button" value="배경이미지 바꾸기 1"
+			onclick="bg('../images/bg10.gif')"> <input type="button"
+			value="배경이미지 바꾸기 2" onclick="bg('../images/bg20.jpg')"> 
+			
+	</form>
+</body>
+</html>

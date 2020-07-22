@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+img {
+	padding: 20px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+ 	$("img:eq(0)").attr('src',"../images/y.png")
+	.attr('title','안뇽').attr('width','100px')
+	.attr('height','100px').css('border','1px solid gray');
+	//속성 eq
+	$('img:eq(1)').attr({ src : "../images/y.png",
+		title : "가나다라", width : "120px", height : "100px"})
+		.css({border : "1px solid green",background : "gray"
+		}) ;
+	imsi = $("img:eq(0)").attr('title'); //속성을 가져올떈 이렇게
+	//alert(imsi);
+	$('span').append(imsi);
+	$('span').append($("img:eq(0)").attr('title'));
+	$('#btn').click(function(){
+		$("img:eq(0)").removeAttr('title');
+		//alert('btn클릭'); 
+	});
+});
+
+</script>
+</head>
+<body>
+	<img/>
+	<img/>
+	<div>
+		<b>attr 연습</b> <span></span>
+	</div>
+	<br>
+	<button id="btn">attr값 제거하기</button>
+</body>
+</html>

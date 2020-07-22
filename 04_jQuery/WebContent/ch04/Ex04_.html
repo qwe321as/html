@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p {
+	background: pink;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		cnt = 0;
+		$('p').live('dblclick', function() {
+			$(this).after('<p>Another paragraph!' + cnt++ + '</p>');
+			if (cnt == 5) {
+				$('p').die();
+			}
+		});
+		//live()는 이벤트 처리를 위임할떄 사용 다음에 출력된것을 눌러도 나옴
+		//bind() <> unbind();
+		//live() <> die();
+	});
+</script>
+</head>
+<body>
+	<p>Click me!</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	text-align: center; background : lightgray;
+	width: 30%;
+	background: lightgray;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btnEmpty').click(function() {
+			$('div').empty();
+			$('div').append("<b> hi </b>");
+		});
+		$('#btnRemove').click(function() {
+			$('div').remove();
+			//$('div').append("<b> hi </b>");
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>jQuery</p>
+		<p>Ajax</p>
+	</div>
+	<input type="button" id="btnEmpty" value="영역의 내용 삭제" />
+	<br>
+	<input type="button" id="btnRemove" value="영역 자체를 삭제" />
+</body>
+</html>

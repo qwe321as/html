@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05_select_option.html</title>
+<style type="text/css">
+	#result{
+		width : 100px;
+		height : 100px;
+		background: yellow;
+	}
+</style>
+<script type="text/javascript">
+	function abc(){
+		//alert("1");
+		
+		//alert(document.myform.first.selectedIndex);
+		
+		var index = document.myform.first.selectedIndex;
+		var t = document.myform.first.options[index].text;
+		var v = document.myform.first.options[index].value;
+		alert(index +","+   t  +","+ v);
+		
+		var area = document.getElementById("result");
+		area.innerHTML = "선택한 option :" + t+","+v +"입니다.";
+	}
+</script>
+</head>
+<body> 
+	<form name="myform">
+		<select id="first" onChange="abc()">
+			<option value="apple">사과</option>
+			<option value="grape" selected>포도</option>
+			<option value="banana">바나나</option>
+		</select>
+	
+		<div id="result"></div>
+	</form>
+</body>
+</html>
+
+

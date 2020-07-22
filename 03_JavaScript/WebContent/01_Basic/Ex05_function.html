@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//var = 새로운 변수선언(지역변수)! 매게변수를 받아올떈 var 사용안함
+	var age = 30;
+	document.write("나이1: " + age + "<br>");
+	function test() {
+		age=40;
+		document.write("test()" + "<br>");
+		document.write("나이2: " + age + "<br>");
+	}
+	function test2(age) {
+		age=44;	
+		document.write("test2()" + "<br>");
+		document.write("나이4: " + age + "<br>");
+	}
+	test();
+	document.write("나이3: " + age + "<br>");
+	test2(50);
+	document.write("나이5: " + age + "<br>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

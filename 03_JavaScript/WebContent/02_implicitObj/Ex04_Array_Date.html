@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var now = new Date();
+	document.write("now1: " + now + "<br>");
+	document.write("now2: " + now.toString() + "<br>");
+	document.write("now3: " + now.toDateString() + "<br>");
+	document.write("now4: " + now.toTimeString() + "<br>");
+
+	var hour = now.getHours();
+	if (hour >= 12)
+		ampm = "오후";
+	else
+		ampm = "오전";
+
+	document.write(ampm + hour + "시");
+	document.write(now.getMinutes() + "분");
+	document.write(now.getSeconds() + "초");
+	var day = now.getDay();
+	document.write("<br>")
+	
+	document.write("Day: " + day  + "<br>");
+	var array = ["../images/sun.gif", "../images/mon.gif", "../images/tue.gif",
+			"../images/wed.gif", "../images/thu.gif", "../images/fri.gif",
+			"../images/sat.gif"  ];
+		document.write("오늘은 <img src="+array[day]+"></img>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

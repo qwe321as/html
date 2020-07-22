@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* int[][] a ={{1,2,3},{4,5,6,7}};
+	 int[][] b = new int[][]{{1,2,3},{4,5,6,7}};
+	 int[][] c = new int[2][];
+	 c[0][0]=1; c[1][2]=6;
+	 c[0] = new int[3];
+	 c[1] = new int[4]; */
+/* 	 var arr = Array(2);
+	 arr[0]=[ 'rose', 'tulip', 'lily' ];
+	 arr[1]=[ '윤아', '태현', '서현', '효연' ]; */	 
+//	var arr = [ [ 'rose', 'tulip', 'lily' ], [ '윤아', '태현', '서현', '효연' ] ];
+	 var arr = Array(2);
+	 arr[0] = new Array();
+	 arr[1] = new Array();
+	 arr[0][0]='rose';
+	 arr[0][1]='tulip';
+	 arr[0][2]='lily';
+	 arr[1][0]='윤아';
+	 arr[1][3]='효연';
+	 
+	document.write(arr.length);
+	document.write("<br>");
+	document.write(arr[0].length);
+	document.write("<br>");
+	document.write(arr[1].length);
+	document.write("<br>");
+	for (var i = 0; i < arr.length; i++) {
+		document.write(arr[i].toString() + "<br>");
+	}
+	document.write("<br>");
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr[i].length; j++) {
+			document.write(arr[i][j] + ",");
+			}
+		document.write("<br>");
+	}
+		document.write("<br>");
+	for( i in arr){
+		for(j in arr[i]){
+			document.write(arr[i][j]+",");
+//i는 행번호 j는 
+		}
+		document.write("<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+float: left;
+margin: 10px;
+padding: 10px;
+width: 150px;
+height: 100px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	fruits = ["apple", "banana", "orange", "melon"];
+	cars=["sonata","morning","genesis"];
+	
+	$(fruits).each(function (index,value) {
+		$('#fruit_list').append("<li>"+index+":"+value+"</li>");
+	});
+	/* $(cars).each(function (index) {
+		$('#car_list').append('<li>'+index+' : '+cars[index]+"</li>");
+	}); */
+	/* $.each(cars,function (index) {
+		$('#car_list').append('<li>'+index+' : '+cars[index]+"</li>");
+	}); */
+	$.each(cars,function (index) {
+		$('<li>'+index+' : '+cars[index]+'</li>').appendTo('#car_list');
+	});
+	
+	
+	$.each(cars,function (index) {
+		$('<li>'+index+' : '+cars[index]+'</li>').prependTo('#car_list2');
+	});
+	$(fruits).each(function (index,value) {
+		$('#fruit_list2').prepend("<li>"+index+":"+value+"</li>");
+	});
+	
+});
+//append : 자식으로 추가하고싶을떄 사용 
+//targer.append(새로운 엘리먼트):타겟에 새로운 엘리먼트를 자식으로 넣겠다 : 새로운 엘리먼트.appendTo(target)
+//targer.prepend(새로운 엘리먼트):타겟에 새로운 엘리먼트를 자식으로 넣겠다 역순 : 새로운 엘리먼트.prependTo(target)
+</script>
+</head>
+<body>
+	<div>
+		<b>좋아하는 과일</b>
+		<ul id="fruit_list"></ul>
+	</div>
+	<div>
+		<b>갖고싶은 차</b>
+		<ul id="car_list"></ul>
+	</div>
+	<div>
+		<b>좋아하는 과일2</b>
+		<ul id="fruit_list2"></ul>
+	</div>
+	<div>
+		<b>갖고싶은 차2</b>
+		<ul id="car_list2"></ul>
+	</div>
+</body>
+</html>

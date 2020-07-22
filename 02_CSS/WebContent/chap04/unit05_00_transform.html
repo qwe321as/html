@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.wrapper{
+width:140px;
+height:50px;
+border:1px solid #bbb;
+margin: 60px;
+}
+	.box01{
+		width:140px; 
+		height:50px;
+		background-color: rgb(204,204,204);
+	}
+	.box02{
+		width:140px;
+		height:50px;
+		background-color: rgb(204,204,204);
+		transform : rotate(20deg);
+	}
+	.box03{
+		width:140px;
+		height:50px;
+		background-color: rgb(204,204,204);
+		transform : rotate(-20deg);
+	}
+	.box04{
+		width:140px;
+		height:50px;
+		background-color: rgb(204,204,204);
+		transform : rotate(20deg);
+		transform-origin:0% 0%;
+			}
+	.box05{
+		width:140px;
+		height:50px;
+		background-color: rgb(204,204,204);
+		transform : rotate(20deg) skewX(20deg);
+		transform-origin:0% 100%;
+		
+	}
+
+
+</style>
+</head>
+<body>
+<div class = "wrapper"><div class="box01">원형보존</div></div>
+<div class = "wrapper"><div class="box02">시계방향회전</div></div>
+<div class = "wrapper"><div class="box03">반시계방향회전</div></div>
+<div class = "wrapper"><div class="box04">중심축변경1</div></div>
+<div class = "wrapper"><div class="box05">중심축변경2</div></div>
+
+</body>
+</html>

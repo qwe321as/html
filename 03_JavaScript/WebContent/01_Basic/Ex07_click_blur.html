@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+}
+</style>
+<script type="text/javascript">
+function func(name) {
+	alert(name);
+}
+function func2(name) {
+	var myarea= document.getElementById("result");
+	myarea.innerHTML=name;
+}
+</script>
+</head>
+<body>
+	<form>
+		이름: <input type="text" name="id" value="태연" 
+		onclick="func('소녀시대')" onblur="func2(this.value)" />
+			
+		<div id="result"></div>
+	</form>
+	
+</body>
+</html>

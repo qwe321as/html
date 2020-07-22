@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#myarea img{
+width:120px;
+height:120px;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('#makeimage').click(function () {
+		//alert(1);
+		len = $('input:checked').length;
+		alert(len);
+		result = "";
+		$('input:checked').each(function () {
+			idval = $(this).attr("id");//아이디속성을 가져와라
+			//alert(idval)
+		result += "<img src=./../images/"+idval+".jpg title="+idval+">";  });
+		//$('#myarea').append(result);//원래있던거 뒤에 추가 됨
+		$('#myarea').html(result);
+		$('img').click(function () {
+		alert($(this).attr('title'));
+		});
+	});
+});
+</script>
+</head>
+<body>
+<p>
+<input type="checkbox" id="Koala" />코알라
+<input type="checkbox" id="Penguins" checked />펭귄
+<input type="checkbox" id="Desert"  checked/>사막
+</p>
+<p>
+<input type="button" id="makeimage" value="그림만들기">
+</p>
+<div id="myarea"></div>
+</body>
+</html>
+
+<!-- ready
+click
+append / html
+addClass
+removeClass
+css
+each
+setInterval
+attr/removeattr
+eq(0) -->

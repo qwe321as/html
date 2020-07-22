@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ cnt=0;
+ sum=0;
+do {
+	str = prompt("입력하세요","stop입력하면 중지");
+	document.write("<h4>입력한 값:"+str+"</h4>");
+	cnt++;
+	
+	//str = eval(str);
+	if (str=="stop") 
+		break;
+	sum += eval(str);
+} while (true);
+
+document.write("합: "+sum + "<br>");
+document.write("반복횟수: "+cnt+ "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p.a, p.c{
+	cursor: pointer;
+	color : green;
+	font-weight: bold;
+	 /* p.a: class 가 a인 p태그, p.a: p의 자손중에 class가 a인 요소 */
+	}
+	.toggleStyle{
+	color:red;
+	}
+	.newStyle{
+	color:blue;
+	}
+
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('p.a').click(function () {
+		//alert(2);
+		$('p.b').toggle('fast');
+	});
+	$('p.c').click(function () {
+		$('p.d').toggle(5000);//시간쓸떄는 ''안씀
+	});
+	$('div').click(function () {
+		if($(this).hasClass("toggleStyle")){
+			$(this).removeClass("toggleStyle");
+		}else {
+			$(this).addClass("newStyle");
+		}
+	});
+});
+</script>
+</head>
+<body>
+<p class='a'>남자배우 인기순위</p>
+<p class='b'>김우빈</p>
+<p class='b'>원빈</p>
+<p class='b'>현빈</p>
+<p class='b'>김수현</p>
+<p class='b'>공유</p>
+<hr />
+<p class='c'>여자배우 인기순위</p>
+<p class='d'>전지현</p>
+<p class='d'>신민아</p>
+<p class='d'>공효진</p>
+<p class='d'>하연수</p>
+<p class='d'>김희애</p>
+<div class='toggleStyle'> div영역입니당 </div>
+</body>
+</html>
