@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#region {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	margin: auto;
+}
+
+#images {
+	width: 600px;
+	height: 200px;
+}
+
+#images a img {
+	width: 200px;
+	height: 200px;
+}
+
+#direction {
+	width: 360px;
+	margin: auto;
+}
+
+.leftbtn {
+	margin-top: 10px;
+}
+
+.rightbtn {
+	margin-top: 10px;
+	margin-left: 290px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		i = 1;
+		$('.leftbtn').bind('click', function() {
+			if (i == 3) {
+				alert('끝');
+				return;
+			}
+			$('#firstimage').animate({
+				marginLeft : '-=205px'
+			}, 2000);
+			i++;
+		});
+		$('.rightbtn').bind('click', function() {
+			if (i == 1) {
+				alert('안뇽');
+				return;
+			}
+			$('#firstimage').animate({
+				marginLeft : '+=205px'
+			}, 2000);
+			i--;
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id='images'>
+			<a href="#"><img src='../images/y.png' id='firstimage' /></a> <a
+				href="#"><img src='../images/y1.png' id='secondimage' /></a> <a
+				href="#"><img src='../images/y2.png' id='thirdimage' /></a>
+		</div>
+	</div>
+	<div id='direction'>
+		<button class="leftbtn">&laquo;</button>
+		<!-- << -->
+		<button class="rightbtn">&raquo;</button>
+		<!-- >> -->
+	</div>
+</body>
+</html>

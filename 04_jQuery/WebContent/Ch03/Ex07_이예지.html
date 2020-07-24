@@ -1,27 +1,67 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript" src = "../js/jquery.js"></script>
+<title>Ex07_내이름.html</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
-$(function () {
-	$('#btnCreate').click(function () {
-		row=$('#row').val();
-		col=$('#col').val();
-		//alert(row+col);
-		arr = new Array('a.jpg','b.jpg','c.jpg','d.jpg','e.jpg');
-		for (var i = 0; i < array.length; i++) {
+	$(function(){
+		
+		$('#btnCreate').click(function(){
+			rd = Math.floor(Math.random()*5);//0*5<= x <1*5  0부터 5까지 
+			alert(rd);
+			var row = $('#row').val();
+			var col = $('#col').val();
 			
-		}
+			//alert(row +"," + col);
+			
+			// 0,1,2,3,4 
+			var arr = new Array("y.png", "y1.png","y2.png","d.jpg","e.jpg");
+			$('#resultTable').empty();
+			var strTable = "<table border='1'>";
+			
+			for(var i=0;i<row;i++){
+				strTable += "<tr>";
+					for(var j=0;j<col;j++){
+						strTable += "<td>";
+						strTable += "<img src='../images/"+arr[ Math.floor(Math.random()*5)] +"'width =100px  >"
+						strTable += "</td>";
+					}
+				
+				strTable += "</tr>";
+			}
+			
+			
+			strTable += "</table>";
+			$('#resultTable').append(strTable);
+			
+		});
 	});
-});
 </script>
 </head>
 <body>
-<input type="text" id="row" value="2" size="4" /> 행
-<input type="text" id="col" value="3" size="4" /> 열
-<input type="button" id="btnCreate" value="테이블 동적 생성" /> 
-<div id ="resultTable"></div>
+
+	<input type="text" id="row" value="2" size="4" />행
+	<input type="text" id="col" value="3" size="4" />열
+
+	<input type="button" id="btnCreate" value="테이블 동적 생성" />
+
+	<div id="resultTable">
+		<!-- 
+		<table>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	 -->
+	</div>
+
+
 </body>
 </html>
+
+
+
+
+

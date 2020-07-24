@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//$('#regBtn').click(function(){
+		$('input[type=submit]').click(function() {
+			//if(document.myform.userId.value == "")
+			//if($('#userId').val() == ""){
+			if ($('#userId').attr('value') == "") {
+				alert("id 누락");
+				$('#userId').focus();
+				return false;
+			}
+
+			if ($('#userName').attr('value') == "") {
+				alert("이름 누락");
+				$('#userName').focus();
+				return false;
+			}
+
+			if ($('#pwd').attr('value') == "") {
+				alert("pw 누락");
+				$('#pwd').focus();
+				return false;
+			}
+
+			if ($('#pwdConfirm').attr('value') == "") {
+				alert("pw 확인 누락");
+				$('#pwdConfirm').focus();
+				return false;
+			}
+
+			if ($('#pwd').attr('value') != $('#pwdConfirm').attr('value')) {
+				alert("pw 일치 안함");
+				$('#pwdConfirm').attr('value', '');
+				return false;
+			}
+
+			if ($('input[name="hobby"]:checked').length == 0) {
+				alert("취미 하나는 꼭 선택하세요");
+				return false;
+			}
+
+			if ($('#favocoffee option:selected').val() == "") {
+				alert("커피 선택하세요");
+				return false;
+			}
+
+			//if($('input[name="gender"]:checked').length == 0){
+			if (!$('input[name="gender"].').is(':checked')) {
+				alert("성별 선택하세요");
+				return false;
+			}//!없으면 인풋타입에 네임이 젠더인것에 체크된것이 있냐?
+			//타입[속성]
+			str = '입력 내용 : \n';
+			str += $('#userId').attr('value') + '\n';
+			str += $('#userName').attr('value') + '\n';
+			str += $('#pwd').attr('value') + '\n';
+			str += $('#pwdConfirm').attr('value') + '\n';
+			str += $('#userId').attr('value') + '\n';
+			str += $('#favocoffee option:selected').val() + '\n'
+			//str += $('input[name="hobby"]:checked').val() +'\n';
+			//str += $('input[name="gender"]:checked').val() +'\n';
+			$('input[name="hobby"]:checked').each(function() {
+				str += $(this).val() + " ";
+			});
+			str += '\n';
+
+			$('input[name="gender"]:checked').each(function() {
+				str += $(this).val() + " ";
+			});
+			alert(str);
+		});// click
+
+	}); // ready
+</script>
+</head>
+<body>
+	<form name="myform" action="abc.jsp">
+		아이디 : <input type="text" id="userId" /> <br> 
+		이름 : <input	type="text" id="userName" /> <br> 
+		암호 : <input type="password"	id="pwd" /> <br> 
+		암호확인 : <input type="password" id="pwdConfirm" /> <br> 
+		취미<br> 음악감상<input type="checkbox" name="hobby"
+			value="music"> 요가<input type="checkbox" name="hobby"
+			value="yoga"> 독서<input type="checkbox" name="hobby"
+			value="reading"> <br> 좋아하는 커피 <select name="coffee"
+			id="favocoffee">
+			<option value="">선택</option>
+			<option value="아메리카노">아메리카노</option>
+			<option value="카페라떼">카페라떼</option>
+			<option value="카푸치노">카푸치노</option>
+			<option value="캬라멜마끼아또">캬라멜마끼아또</option>
+		</select> <br> 성별<br> 
+		남<input type="radio" name="gender" value="남">
+		여<input type="radio" name="gender" value="여"> <br> <br>
+		<input type="submit" id="regBtn" value="회원가입" /> 
+		<input type="reset" id="cnlBtn" value="초기화" />
+
+	</form>
+</body>
+</html>
+
+
+
+
+
+

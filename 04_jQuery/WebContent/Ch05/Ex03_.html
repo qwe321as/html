@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	border: 1px solid gray;
+	pabbing: 5px;
+	text-align: center;
+	background-color: pink;
+	color: white; 
+}
+#panel2{
+display: none;
+}
+img {
+	width: 150px;
+	height: 150px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#panel1').click(function () {
+		$('#panel2').slideToggle('fast', function () {
+		 $('img').css('border','10px solid gray').css('margin','5px');
+		});
+	});
+
+});
+</script>
+</head>
+<body>
+	<div id="panel1">Click</div>
+	<div id="panel2">
+		<img src="../images/y1.png" />
+	</div>
+</body>
+</html>

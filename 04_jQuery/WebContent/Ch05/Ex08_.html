@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$('button').click(function() {
+
+			div = $('div');
+			div.animate({
+				height : '300px',
+				opacity : '0.4'
+			}, "slow");
+
+			div.animate({
+				width : '300px',
+				opacity : '0.8'
+			}, "slow");
+
+			div.animate({
+				height : '100px',
+				opacity : '0.4'
+			}, "slow");
+
+			div.animate({
+				width : '100px',
+				opacity : '0.8'
+			}, "slow");
+
+		});
+	});
+</script>
+</head>
+<body>
+	<button>버튼</button>
+	<br>
+	<br>
+
+	<div style="width: 100px; height: 100px; background: pink"></div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td {
+	border: 1px solid gray;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.getJSON("item.json", function(data, textStatus) {
+			//alert(data);
+			//alert(textStatus);
+			$('#treeData').append(
+					'<tr>' + '<td> id </td>' + '<td> name </td>'
+							+ '<td> price </td>' + '<td> description </td>'
+							+ '</tr>');
+			$.each(data,function(){
+				$('#treeData').append(
+					'<tr>'+
+					'<td>'+this.id+'</td>'+'<td>'+this.name+'</td>'+
+					'<td align="right">'+this.price+'</td>'+'<td>'+this.description+'</td>'+
+					'</tr>'
+				);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사 자료</h3>
+	<table id="treeData">
+	</table>
+</body>
+</html>

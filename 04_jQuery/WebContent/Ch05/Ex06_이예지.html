@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#left_side {
+	float: left;
+}
+#imgsrc{
+width: 300px;
+height: 300px;
+
+}
+img.small{
+width: 90px;
+height: 90px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('.small:eq(0)').bind({mouseover:function () {
+		$('.small:eq(0)').fadeTo('slow',0.3);
+	},
+	mouseout : function(){
+		$('.small:eq(0)').fadeTo('fast',1); }
+	});
+	
+	$('.small:eq(1)').bind({mouseover:function () {
+		$('.small:eq(1)').fadeTo('slow',0.3);
+	},
+	mouseout : function(){
+		$('.small:eq(1)').fadeTo('fast',1); }
+	});
+	
+	$('.small:eq(2)').bind({mouseover:function () {
+		$('.small:eq(2)').fadeTo('slow',0.3);
+	},
+	mouseout : function(){
+		$('.small:eq(2)').fadeTo('fast',1); }
+	});
+	imsi=$('.small:eq(0)').attr('src');
+	//$('#area img').attr('src',imsi);
+	
+	$('.small:eq(0)').click(function () {
+		
+		$('#imgsrc').hide();
+		$('#imgsrc').attr('src',imsi).fadeIn(1000);
+	});
+	$('.small:eq(1)').click(function () {
+		$('#imgsrc').hide();
+		$('#imgsrc').attr('src',$(this).attr('src')).fadeIn(1000);
+		
+	});
+	$('.small:eq(2)').click(function () {
+		$('#imgsrc').css('display','none');
+		$('#imgsrc').attr('src',$(this).attr('src')).fadeIn(1000);
+	});
+});
+//mouseover mouser
+</script>
+</head>
+<body> 
+	<div id="left_side">
+		<div>
+			<img class='small' src="../images/y.png">
+		</div>
+		<div>
+			<img class='small' src="../images/y1.png">
+		</div>
+		<div>
+			<img class='small' src="../images/y2.png">
+		</div>
+	</div>
+	<div id='area'>
+		<img id='imgsrc' >
+	</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,29 +19,64 @@ form {
 </style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
-$(function () {
-	$('.area').attr(function () {
-	for (var i = 1; i < 10; i++) {
-		'<option value ="i">i단</option>'
-	}
+	$(function(){
+		
+		var str = "<select id=dan>";
+		for(var i=1;i<=9;i++){
+			str += "<option value=" + i +">" + i +"단</option>";
+		}
+		
+		str += "</select>";
+		
+		$('.area').append(str);
+		
+		
+		$('#view').click(function(){
+			str = ""; 
+			var dan = $('#dan').val();
+			
+			str += dan +"단<br><br>";
+			
+			for(var i=1;i<=9;i++){
+				var mul = dan * i;
+				str += dan + "*" + i +"=" + mul +"<br>";
+			}
+			
+			$('#result').html(str); //append, 
+		});
 		
 	});
-});
-
 </script>
-</head>
+
+
+
+
+
 <body>
 	<form>
 		<div class="area">
-			<!-- <select id="dan">
-		<option value ="1">1단</option>
-		<option value ="9">9단</option> //for문으로 만들기
-		</select> -->
-
+			<!-- 
+			<select id="dan">
+				<option value="1">1단</option> 1단:text
+				<option value="9">9단</option>
+			</select> 
+			 -->
 		</div>
-		<br> <input type="button" id="view" value="구구단 출력">
+
+		<br> <input type="button" id="view" value="구구단출력">
 	</form>
 	<br>
-	<div id="result"></div>
+	<div id="result">
+		<!-- 
+		3*1=3
+		3*9=27
+		 -->
+	</div>
+
 </body>
 </html>
+
+
+
+
+

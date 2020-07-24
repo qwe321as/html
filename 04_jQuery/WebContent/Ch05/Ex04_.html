@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+text-align: center;
+}
+div{
+width:100px;
+height: 100px;
+float: left;
+margin: 5px;
+padding: 5px;
+display: none;
+}
+
+#pink{
+background-color: pink;
+}
+#green{
+background-color: lightgreen;
+}
+#blue{
+background-color: skyblue;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$(document).click(function () {
+		$('div:first').fadeIn(5000,function(){
+			alert(4);
+		}).fadeTo('slow',0.8).fadeOut(5000); //fadeto는 선명도지정
+		
+		
+	$('div:ep(1)').fadeIn(3333);
+	});
+});
+</script>
+</head>
+<body>
+<span>클릭</span><br>
+
+<div id="pink"><span>하하하</span></div>
+<div id="green"></div>
+<div id="blue"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		man = {
+				name:'woobin', age : 32, birthdate : new Date(1989,6,16),
+				jumsu: {kor:60, eng:80, math:40}
+			};
+		woman = {
+			name : 'yeji', age : 23, birthdate : new Date(1998,0,21),
+			jumsu : { kor:80, eng:70, math:100 }
+		};
+		console.log(man.name);
+		console.log(man.birthdate);
+		console.log(man.age);
+		console.log(woman.name);
+		console.log(woman.birthdate);
+		console.log(woman.jumsu.math);
+		
+		a = new Array("aa","bb");
+		b = ["cc","dd"];
+		
+		person = new Array(
+					man={
+						name:'woobin', age : 32, birthdate : new Date(1989,6,16),
+						jumsu: {kor:60, eng:80, math:40}
+					},
+					woman={
+						name : 'yeji', age : 23, birthdate : new Date(1998,0,21),
+						jumsu : { kor:80, eng:70, math:100 }
+					}
+		);//array
+		
+		console.log(person[0].name);
+		console.log(person[1].jumsu.math);
+		person2 = new Array(man, woman);
+		console.log(person2[0].name);
+		console.log(person2[1].jumsu.math);
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
