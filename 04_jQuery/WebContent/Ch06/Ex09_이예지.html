@@ -14,43 +14,55 @@ div {
 table {
 	border: 1px solid red;
 }
-번호 아이디 이름
-1   qwe  이일이
-2  
-3
-4
+td{
+	border: 1px solid red;
+	text-align: center;
 
+}
 </style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$('#bnt').click(function({
-		$.ajax({
+		$('#btn').click(function(){
+		$.getJSON("test.json",function(data){
+			var str = "<table border=1><tr><th>번호</th><th>아이디</th><th>이름</th></tr>";
+			$.each(data,function(index){
+				str += "<tr>";
+				str += "<td>" + (index+1) +"</td>";
+				str += "<td>" + this.id +"</td>"; 
+				str += "<td>" + this.name +"</td>";
+				str += "</tr>";
+			}); // each
+			str+="</table>";
+			
+			$('#display').append(str);
+			
+		}); // getJSON
+		
+		/*  $.ajax({
 			url: 'a.json',
 			dataType : 'json',
 			success : function(data){
-			$('#display').append(
-			'<table> <tr> <td>번호</td>'+'<td>아이디</td>'+'<td>이름</td> </tr> </table>'		
+				
+				$('#display').empty().append(
+			'<table> <br> <tr> <td>번호</td>'+'<td>아이디</td>'+'<td>이름</td> </tr></table> '		
 			);
- 			$.each(data,function(){
-				$('#display').append(
-						'<table> <tr> <td>'+this.no+'</td> <td>'+this.id+
-						'</td> <td>'+this.name'</td> </tr> </table>');
-			});
-		});
-			error : function () {
-				alert('실패')
-			}
-		});
-			
-		}));
+ 			$.each(data,function(i){
+				$('table').append(
+						' <tr> <td>'+(i+1)+'</td> <td>'+this.id+
+						'</td> <td>'+this.name+'</td> </tr> ');
+			}); 
+		}
+		});  */
 	});
+	
+});
 </script>
 </head>
 <body>
 	<h3>json파일 가져오기</h3>
 	<input type="button" id="bnt" value="JSON 파일요청" />
-	<div id="display">요청 결과 풀력 영역</div>
+	<div id="display">요청 결과 풀력 영역 </div>
 
 </body>
 </html>

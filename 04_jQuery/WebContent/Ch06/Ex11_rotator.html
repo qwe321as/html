@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#rotator1{
+background-color: pink;
+}
+#divHeight{
+height: 130px;
+}
+</style>
+<script type="text/javascript" src = "../js/jquery.js"></script>
+<script type="text/javascript" src = "../js/jquery.rotator.js"></script>
+<script type="text/javascript">
+$(function () {
+	$("#rotator1").rotator({ms:3000});
+});
+
+</script>
+</head>
+<body>
+<div id ="rotator1" style="width:150px; height:230px; overflow: hidden;">
+<div class="divHeight">
+<img src="../images/im4.jpg" />
+냥이1
+</div>
+<div class="divHeight">
+<img src="../images/im5.jpg" />
+냥이2
+</div>
+<div class="divHeight">
+<img src="../images/im6.jpg" />
+강아지1
+</div>
+<div class="divHeight">
+<img src="../images/im7.jpg" />
+강아지2
+</div>
+
+</div>
+</body>
+</html>

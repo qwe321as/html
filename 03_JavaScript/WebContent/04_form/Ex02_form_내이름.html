@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Ex02_form_내이름.html </title>
+	<style type="text/css">
+		
+		table {
+			width:500px;
+			height:500px;
+			border:1 ;
+			cellpadding:0 ;
+			cellspacing:5px ;
+			border-collapse: collapse;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		
+		duplicate = false;
+		
+		function idCheck(){
+			//alert(2);
+			duplicate = true;
+			
+			if(document.myform.id.value == "abcd"){
+				alert("중복되는 아이디입니다.");
+				document.myform.id.value = "";
+				document.myform.id.focus();
+			}
+			else{
+				alert("사용 가능한 아이디입니다.");
+			}
+			
+		}// idCheck
+		
+		
+		function check(){
+			//alert(1); 
+			
+			if(duplicate == false){
+				alert("아이디 중복체크는 필수입니다.");
+				return false;
+			}
+			
+			str = "선택한 내용:\n";
+			
+			//if(document.myform.id.value == ""){
+			if(document.myform.id.value.length == 0){
+				alert("아이디는 필수입니다.");
+				document.myform.id.focus();
+				return false;
+			}
+			if(document.myform.password.value.length == 0){
+				alert("비밀번호는 필수입니다.");
+				document.myform.password.focus();
+				return false;
+			}
+			
+			if(document.myform.repassword.value.length == 0){
+				alert("비밀번호확인은 필수입니다.");
+				document.myform.repassword.focus();
+				return false;
+			}
+			
+			if(document.myform.password.value != 
+							document.myform.repassword.value){
+				alert("비밀번호 재확인을 해주세요.");
+				return false;
+			}
+			
+			if(document.myform.name.value.length == 0){
+				alert("이름은 필수입니다.");
+				return false;
+			}
+			
+			
+			index = document.myform.areacode.selectedIndex;
+			
+			if(index == 0){
+				alert("지역번호 선택하세요");
+				return false;
+			}
+			
+			
+			
+			if(document.myform.phone1.value == ""){
+				alert("전화번호1은 필수입니다.");
+				return false;
+			}
+			
+			if(isNaN(document.myform.phone1.value) == true){
+				alert("전화번호1은 숫자로 입력하세요");
+				return false;
+			}
+			
+			if(document.myform.phone2.value == ""){
+				alert("전화번호2은 필수입니다.");
+				return false;
+			}
+			
+			if(isNaN(document.myform.phone2.value) == true){
+				alert("전화번호2는 숫자로 입력하세요");
+				return false;
+			}
+			
+			if(document.myform.email.value.indexOf('@') == -1) {
+				alert("유효한 메일주소가 아닙니다.");
+				return false;
+			}
+
+			str += document.myform.id.value +"\n";
+			str += document.myform.password.value +"\n";
+			str += document.myform.areacode.value +"\n";
+			str += document.myform.phone1.value +"\n";
+			str += document.myform.phone2.value +"\n";
+			str += document.myform.email.value +"\n";
+			
+			
+			len = document.myform.singer.length;
+			flag = false;
+			for(i=0;i<len;i++){
+				if(document.myform.singer[i].checked == true){
+					str += document.myform.singer[i].value+" ";
+					flag = true;
+				}
+			}
+			if(flag == false){
+				alert('singer 최소 하나는 선택해야 합니다.');
+				return false;
+			}
+			
+			str += "\n";
+			
+			len = document.myform.gender.length;
+			flag = false;
+			for(i=0;i<len;i++){
+				if(document.myform.gender[i].checked == true){
+					str += document.myform.gender[i].value+"\n";
+				
+					flag = true;
+				}
+			}
+			if(flag == false){
+				alert('gender 하나는 선택해야 합니다.');
+				return false;
+			}
+			
+			if(document.myform.ta.value == ""){
+				alert("textarea는 필수입니다.");
+				return false;
+			}
+			
+			str += document.myform.ta.value+"\n";
+			
+			alert(str);
+			
+		} // check
+	</script>
+	
+	
+</head>
+<body>
+<form action="result.jsp" name="myform"> 
+<table border=1>
+	<tr>
+		<td>아이디</td>
+		<td>
+			<input type="text" id="id" size="20" maxlength="10" 
+				value="아이디 입력" onFocus="go_focus(myform.id)">  
+				
+			<input type="button" value="중복 체크" onClick="idCheck()">				
+		</td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="password" size="20" maxlength="10"></td>
+	</tr>
+	<tr>
+		<td>비밀번호 확인</td>
+		<td><input type="password" name="repassword" size="20" maxlength="10"></td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name="name" size="20" maxlength="10"></td>
+	</tr>
+	<tr>
+		<td>전화 번호</td>
+		<td>
+			<select name="areacode">
+				<option value="선택">선택</option>
+				<option value="02">02</option>
+				<option value="031">031</option>
+				<option value="051">051</option>
+				<option value="043">043</option>
+				<option value="064">064</option>
+			</select>
+			&nbsp;-&nbsp;
+			<input type="text" name="phone1" size="4" maxlength="4">
+			&nbsp;-&nbsp;
+			<input type="text" name="phone2" size="4" maxlength="4">
+		</td>
+	</tr>	
+	<tr>
+		<td>주소</td>
+		<td>
+			<input type="text" name="address1" size="30" maxlength="30" > 
+		</td>
+	</tr>
+	<tr>
+		<td>세부 주소</td>
+		<td><input type="text" name="address2" size="30" maxlength="30"></td>
+	</tr>
+	<tr>
+		<td>email</td>
+		<td><input type="text" name="email" size="30" maxlength="30"></td> 
+	</tr>	
+	<tr>
+		<td>사진 올리기</td>
+		<td><input type="file"></td>
+	</tr>	
+	<tr>
+		<td>좋아하는 가수</td>
+		<td>
+			
+			<input type="checkbox" name="singer" value="소녀시대" checked="checked">소녀시대
+			<input type="checkbox" name="singer" value="방탄">방탄
+			<input type="checkbox" name="singer" value="레드벨벳">레드벨벳
+			<input type="checkbox" name="singer" value="동방신기">동방신기
+		</td>
+	</tr>	
+	<tr>
+		<td>성별</td>
+		<td>
+			<input type="radio" name="gender" value="남">남
+			<input type="radio" name="gender" value="여">여
+		</td>
+	</tr>
+	<tr>
+		<td>글 쓰기</td>
+		<td>
+			<textarea rows="5" cols="30" name="ta">여기는 textarea자리</textarea>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="전송합시다." onClick="return check()">
+			&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="초기화">
+		</td>
+	</tr>	
+</table>
+</form>
+</body>
+</html>

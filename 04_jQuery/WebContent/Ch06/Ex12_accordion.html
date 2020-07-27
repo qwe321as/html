@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#accordion').accordion({event:'mouseover'});
+});
+
+</script>
+</head>
+<body>
+	<div id="accordion">
+		<h3>
+			<a href="#">First header</a>
+		</h3>
+		<div>
+			<div>First-1 content</div>
+			<div>First-2 content</div>
+			<div>First-3 content</div>
+			<div>First-4 content</div>
+		</div>
+		<h3>
+			<a href="#">Second header</a>
+		</h3>
+		<div>
+			<div>Second-1 content</div>
+			<div>Second-2 content</div>
+		</div>
+		<h3>
+			<a href="#">Third header</a>
+		</h3>
+		<div>
+			<div>Third-1 content</div>
+		</div>
+	</div>
+</body>
+</html>
