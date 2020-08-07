@@ -1,0 +1,17 @@
+create sequence log_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 100
+nocache;
+
+create table login (
+num number,
+id varchar2(30),
+pw varchar2(40),
+name varchar2(25),
+email1 varchar2(50),
+email2 varchar2(50)
+);
+
+insert into login values(log_seq.nextval,'qwe123as','yeji','예지예찌','qwe123as','naver.com');

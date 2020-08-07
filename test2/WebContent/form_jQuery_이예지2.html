@@ -52,11 +52,19 @@
 		str += $('input[name=date]').val()+"\n";
 		
 		
-		if(!$('input[name=kind]').is(":checked")){
+		  /* if(!$('input[name=kind]').is(":checked")){
 			alert("배송비 체크 누락");
+			return false;
+		} 
+		 */
+		
+		if($('input[name=kind]:checked').length==0){
+			alert("배송비 선택하세요");
 			return false;
 		}
 		
+		
+
 		str += $('input[name=kind]:checked').val()+"\n";
 		
 		if($('input[name=bookstore]:checked').length==0){
@@ -69,14 +77,13 @@
 		});
 		str += "\n";
 		
-		
-		if($('select[name=count] option:selected').val() == "선택"){
+		if($('select option:selected').val() == "선택"){
 			alert("보유수량을 선택하세요");
 			return false;
 		}
 		
-		count = $('select[name=count] option:selected').val();
-		str += count +"\n";
+
+		str += $('select option:selected').val() +"\n";
 		
 		alert(str);
 		

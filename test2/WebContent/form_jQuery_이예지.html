@@ -4,64 +4,57 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
-	$(function inputCheck() {
+	function inputCheck() {
 		str = '입력하신 값은 : \n';
-  		if ($('input[name="title"]'.val()=="")) {
+  		if ($('input[name=title]').val()=="") {
 			alert('제목을 입력하세요.');
 			return false;
 		}
-		if ($('input[name="author"]'.val()).length == 0 {
+		if ($('input[name=author]').val()=="") {
 			alert('작가을 입력하세요.');
 			return false;
 		}
-		if ($('input[name="publisher"]'.val()).length == 0 {
+		if ($('input[name=publisher]').val()=="") {
 			alert('출판사을 입력하세요.');
 			return false;
 		}
-		if ($(isNaN('input[name="price"]'.val()))) {
-			alert('수량은 숫자만입력하세요.');
-			return false;
-		}
-		if ($('input[name="price"]'.val()).length == 0 {
+		if ($('input[name=price]').val()==""){
 			alert('가격을 입력하세요.');
 			return false;
 		}
-		if ($('input[name="date"]'.val()).length == 0 {
+		if (isNaN($('input[name=price]').val())==true) {
+			alert('수량은 숫자만입력하세요.');
+			return false;
+		}
+		if ($('input[name=date]').val()=="") {
 			alert('입고일을 입력하세요.');
 			return false;
 		}  
 
-		str += $('input[name="title"]'.val())+'\n';
-		str += $('input[name="author"]'.val())+'\n';
-		str += $('input[name="publisher"]'.val())+'\n';
-		str += $('input[name="price"]'.val())+'\n';
-		str += $('input[name="date"]'.val())+'\n';
+		str += $('input[name=title]').val()+'\n';
+		str += $('input[name=author]').val()+'\n';
+		str += $('input[name=publisher]').val()+'\n';
+		str += $('input[name=price]').val()+'\n';
+		str += $('input[name=date]').val()+'\n';
 		
-		if (!($('input[name="kind"]'.val()).checked)) {
+		if ($('input[name=kind]:checked').length==0) {
 			alert('배송비 선택하세요');
 			return false;
 		}
-		if (($('input[name="kind"]'.val()).checked)) {
-			atr += $('input[name="kind"]'.val()+'\n');
-		}		
-		if (!($('input[name="bookstore"]'.val()).checked)) {
+		str += $('input[name=kind]:checked').val()+"\n";
+		
+		if ($('input[name=bookstore]:checked').length==0) {
 			alert('서점 선택하세요');
 			return false;
 		}
-		if (($('input[name="bookstore"]'.val()).checked)) {
-			$('input[name="bookstore"]'.val()).checked.each(function () {
-			atr += $('input[name="bookstore"]'.val()+'\n');
-		});
-		}
-		if (($('input[name="count"]').val())=="선택") {
+		
+		if ($('select[name=count] option:selected').val()=="선택") {
 			alert('수량선택하세요');
 			return false;
 		}
-		if (!(($('input[name="count"]').val())=="선택")) {
-			atr += $('input[name="count"]'.val()+'\n');
-		}
+
 		alert(str);
-	)};
+	};
 </script>
 </head>
 <body>
